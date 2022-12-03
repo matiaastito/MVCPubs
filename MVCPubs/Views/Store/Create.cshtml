@@ -1,0 +1,43 @@
+﻿@model MVCPubs.Models.Store
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div>
+    @using (Html.BeginForm("Create", "Store", FormMethod.Post))
+    {
+        <p>
+            @Html.LabelFor(model=> model.StorId)
+            @Html.EditorFor(model=>model.StorId)
+            @Html.ValidationMessageFor(model=>model.StorId)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.StorName)
+            @Html.EditorFor(model => model.StorName)
+            @Html.ValidationMessageFor(model => model.StorName)
+        </p>
+        <p>
+            @Html.LabelFor(model=> model.StorAddress)
+            @Html.EditorFor(model=>model.StorAddress)
+            @Html.ValidationMessageFor(model=>model.StorAddress)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.City)
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </p>
+        <p>
+            @Html.LabelFor(model=> model.State)
+            @Html.EditorFor(model=>model.State)
+            @Html.ValidationMessageFor(model=>model.State)
+        </p>
+        <p>
+            @Html.LabelFor(model=> model.Zip)
+            @Html.EditorFor(model=>model.Zip)
+            @Html.ValidationMessageFor(model=>model.Zip)
+        </p>
+        <input type="submit" value="Crear" />
+        @Html.ActionLink("Regresar al Indice", "Index", "Store")
+    }
+</div>

@@ -1,0 +1,33 @@
+﻿@model MVCPubs.Models.Store
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<fieldset>
+    <legend>Store Detalle</legend>
+    <div>
+        @Html.DisplayNameFor(model => model.StorName)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.StorName)
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.StorAddress)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.StorAddress)
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.Zip)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.Zip)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Regresar al Indice", "Index", "Store")
+</p>

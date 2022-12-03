@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MVCPubs.Models.Store>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <div class="store"><a asp-action="Create" asp-controller="Store">Nuevo Store</a></div>
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StorId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StorName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StorAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.State)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Zip)
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StorId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StorAddress)
+                    </td>
+                    <td>
+                        <a asp-action="TraerPorPaisCiudad" asp-controller="Store" asp-route-City="@item.City" method="get">@Html.DisplayFor(modelItem => item.City)</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.State)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Zip)
+                    </td>
+                    <td>@Html.ActionLink("Editar","Edit", new{id = item.StorId})</td>
+                    <td>@Html.ActionLink("Detalle","Details", new{id = item.StorId})</td>
+                    <td>@Html.ActionLink("Eliminar","Delete", new{id = item.StorId})</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    <form asp-action="Index" asp-controller="Store">Regresar a la Lista<p><button>Listar</button></p></form>
+</p>
